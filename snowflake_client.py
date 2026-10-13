@@ -28,8 +28,8 @@ class SnowflakeManager:
             "account": get_val("account", "SNOWFLAKE_ACCOUNT"),
             "user": get_val("user", "SNOWFLAKE_USER"),
             "password": get_val("password", "SNOWFLAKE_PASSWORD"),
-            "database": get_val("database", "SNOWFLAKE_DATABASE"),
-            "schema": get_val("schema", "SNOWFLAKE_SCHEMA", "PUBLIC"),
+            "database": get_val("database", "SNOWFLAKE_DATABASE", "PHARMA_DB"),
+            "schema": get_val("schema", "SNOWFLAKE_SCHEMA", "CLINICAL_TRIALS"),
             "warehouse": get_val("warehouse", "SNOWFLAKE_WAREHOUSE", "COMPUTE_WH"),
             "role": get_val("role", "SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
         }

@@ -46,8 +46,6 @@ def connect_from_env():
         "SNOWFLAKE_USER",
         "SNOWFLAKE_PASSWORD",
         "SNOWFLAKE_WAREHOUSE",
-        "SNOWFLAKE_DATABASE",
-        "SNOWFLAKE_SCHEMA",
     ]
     missing = [k for k in required if not os.getenv(k)]
     if missing:
@@ -58,8 +56,8 @@ def connect_from_env():
         user=os.environ["SNOWFLAKE_USER"],
         password=os.environ["SNOWFLAKE_PASSWORD"].strip().strip("'").strip('"'),
         warehouse=os.environ["SNOWFLAKE_WAREHOUSE"],
-        database=os.environ["SNOWFLAKE_DATABASE"],
-        schema=os.environ["SNOWFLAKE_SCHEMA"],
+        database=os.getenv("SNOWFLAKE_DATABASE", "PHARMA_DB"),
+        schema=os.getenv("SNOWFLAKE_SCHEMA", "CLINICAL_TRIALS"),
         role=os.getenv("SNOWFLAKE_ROLE") or None,
         login_timeout=20,
         network_timeout=30,
